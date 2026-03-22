@@ -4,13 +4,16 @@
 
 1. Instalar dependencias reales de Laravel 11 con `composer install`.
 2. Sustituir este bootstrap mínimo por el runtime oficial de Laravel.
-3. Cerrar Sprint 10 (`provider adapters hardening`).
-4. Avanzar Sprint 11 (`auth foundation`).
+3. Cerrar Sprint 11 (`auth foundation`).
+4. Avanzar Sprint 12 (`frontend shell`).
 
 ## Endpoints disponibles en este scaffold
 
 - `GET /api/health`
 - `GET /api/meta/bootstrap`
+- `POST /api/v1/auth/login`
+- `POST /api/v1/auth/logout`
+- `GET /api/v1/auth/session`
 - `GET /api/v1/customers`
 - `GET /api/v1/catalog/products`
 - `GET /api/v1/electronic-documents`

@@ -2,15 +2,15 @@
 
 ## Qué sigue inmediatamente
 
-1. **Cerrar Sprint 8**
-   - conectar drafts de factura con SQL Server real
-   - mapear impuestos, descuentos y totales del modelo legacy
-   - preparar transición hacia emisión FE desde la nueva API
+1. **Cerrar Sprint 11**
+   - endurecer auth con persistencia/secretos reales y expiración robusta
+   - definir permisos por tenant, sucursal y módulo operativo
+   - habilitar observabilidad inicial y métricas API por endpoint/evento
 
-2. **Entrar a Sprint 9**
-   - encapsular The Factory HKA en el nuevo backend
-   - preparar reenvíos y trazabilidad FE
-   - fortalecer auditoría técnica y funcional
+2. **Entrar a Sprint 12**
+   - preparar shell frontend con login, guards y estado global
+   - propagar sesión/tenant del backoffice al cliente HTTP
+   - alinear navegación y layout del backoffice nuevo
 
 3. **Preparar piloto técnico**
    - levantar SQL Server accesible desde el nuevo backend
@@ -21,6 +21,6 @@
 
 Sí, **parcialmente**:
 
-- Sí puedo seguir avanzando en endpoints base, frontend y contratos de módulos.
-- No puedo completar Laravel/Vite reales ni integración transaccional FE/SQL Server sin registries y sin `pdo_sqlsrv`.
-- En cuanto exista acceso a paquetes o drivers preinstalados, puedo seguir con Sprint 9 y siguientes sobre runtime real.
+- Sí puedo seguir avanzando en auth scaffold, contratos y frontend base.
+- No puedo completar auth productiva ni integración FE/SQL Server real sin registries, drivers, secretos y runtime completo.
+- En cuanto exista acceso a paquetes o drivers preinstalados, puedo seguir con Sprint 12 y siguientes sobre runtime real.

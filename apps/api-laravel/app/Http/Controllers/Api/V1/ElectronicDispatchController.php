@@ -22,7 +22,10 @@ final class ElectronicDispatchController
 
         return [
             'data' => $this->repository->all($limit),
-            'meta' => ['limit' => $limit],
+            'meta' => [
+                'limit' => $limit,
+                'providers' => $this->resolver->availableProviders(),
+            ],
         ];
     }
 
@@ -40,6 +43,7 @@ final class ElectronicDispatchController
         $provider = trim((string) ($payload['provider'] ?? ''));
         $invoiceId = trim((string) ($payload['invoiceId'] ?? ''));
         $documentType = trim((string) ($payload['documentType'] ?? '01'));
+        $retryFromDispatchId = trim((string) ($payload['retryFromDispatchId'] ?? ''));
 
         if ($idempotencyKey === '' || $provider === '' || $invoiceId === '') {
             return [
@@ -64,6 +68,8 @@ final class ElectronicDispatchController
             ];
         }
 
+        $retrySource = $retryFromDispatchId !== '' ? $this->repository->findById($retryFromDispatchId) : null;
+
         try {
             $adapter = $this->resolver->resolve($provider);
         } catch (InvalidArgumentException $exception) {
@@ -87,6 +93,8 @@ final class ElectronicDispatchController
             'provider' => $adapter->providerName(),
             'invoiceStatus' => $invoiceDraft['status'] ?? 'draft',
             'source' => 'sprint-10-hardening',
+            'retryFromDispatchId' => $retrySource['id'] ?? null,
+            'attempt' => $retrySource ? (($retrySource['trace']['attempt'] ?? 1) + 1) : 1,
         ];
 
         $adapterResponse = $adapter->dispatch([
@@ -112,6 +120,7 @@ final class ElectronicDispatchController
             ],
             'request' => $adapterResponse['request'] ?? [],
             'response' => $adapterResponse['response'] ?? [],
+            'correlation' => $adapterResponse['correlation'] ?? [],
             'capabilities' => $adapterResponse['capabilities'] ?? [],
             'technical' => $adapterResponse['technical'] ?? [],
             'trace' => $trace,
@@ -121,7 +130,10 @@ final class ElectronicDispatchController
 
         return [
             'data' => $this->repository->append($record),
-            'meta' => ['idempotent' => false],
+            'meta' => [
+                'idempotent' => false,
+                'retry' => $retrySource !== null,
+            ],
         ];
     }
 }

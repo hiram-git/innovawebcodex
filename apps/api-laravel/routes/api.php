@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\HealthController;
 use App\Http\Controllers\Api\MetaController;
+use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\CustomerController;
 use App\Http\Controllers\Api\V1\ElectronicDispatchController;
 use App\Http\Controllers\Api\V1\ElectronicDocumentController;
@@ -12,6 +13,9 @@ use App\Http\Controllers\Api\V1\ProductController;
 return [
     ['GET', '/api/health', [HealthController::class, 'show']],
     ['GET', '/api/meta/bootstrap', [MetaController::class, 'bootstrap']],
+    ['POST', '/api/v1/auth/login', [AuthController::class, 'login']],
+    ['POST', '/api/v1/auth/logout', [AuthController::class, 'logout']],
+    ['GET', '/api/v1/auth/session', [AuthController::class, 'session']],
     ['GET', '/api/v1/customers', [CustomerController::class, 'index']],
     ['GET', '/api/v1/catalog/products', [ProductController::class, 'index']],
     ['GET', '/api/v1/electronic-documents', [ElectronicDocumentController::class, 'index']],

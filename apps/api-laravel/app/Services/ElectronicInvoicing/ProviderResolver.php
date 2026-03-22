@@ -15,4 +15,20 @@ final class ProviderResolver
             default => throw new InvalidArgumentException('Proveedor FE no soportado.'),
         };
     }
+
+    public function availableProviders(): array
+    {
+        return [
+            [
+                'provider' => 'the-factory-hka',
+                'displayName' => 'The Factory HKA',
+                'supportedDocumentTypes' => ['01', '04'],
+            ],
+            [
+                'provider' => 'digifact',
+                'displayName' => 'Digifact',
+                'supportedDocumentTypes' => ['01', '03', '04'],
+            ],
+        ];
+    }
 }

@@ -7,6 +7,7 @@ require_once __DIR__ . '/../app/Contracts/ElectronicInvoiceProviderInterface.php
 require_once __DIR__ . '/../app/Services/ElectronicInvoicing/TheFactoryHkaProvider.php';
 require_once __DIR__ . '/../app/Services/ElectronicInvoicing/DigifactProvider.php';
 require_once __DIR__ . '/../app/Services/ElectronicInvoicing/ProviderResolver.php';
+require_once __DIR__ . '/../app/Repositories/AuthSessionRepository.php';
 require_once __DIR__ . '/../app/Repositories/CustomerRepository.php';
 require_once __DIR__ . '/../app/Repositories/ProductRepository.php';
 require_once __DIR__ . '/../app/Repositories/ElectronicDocumentRepository.php';
@@ -15,6 +16,7 @@ require_once __DIR__ . '/../app/Repositories/InvoiceDraftRepository.php';
 require_once __DIR__ . '/../app/Repositories/ElectronicDispatchRepository.php';
 require_once __DIR__ . '/../app/Http/Controllers/Api/HealthController.php';
 require_once __DIR__ . '/../app/Http/Controllers/Api/MetaController.php';
+require_once __DIR__ . '/../app/Http/Controllers/Api/V1/AuthController.php';
 require_once __DIR__ . '/../app/Http/Controllers/Api/V1/CustomerController.php';
 require_once __DIR__ . '/../app/Http/Controllers/Api/V1/ProductController.php';
 require_once __DIR__ . '/../app/Http/Controllers/Api/V1/ElectronicDocumentController.php';

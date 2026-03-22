@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { AppShell } from './components/AppShell';
+import { AuthPage } from './pages/AuthPage';
 import { CustomersPage } from './pages/CustomersPage';
 import { DashboardPage } from './pages/DashboardPage';
 import { ElectronicDispatchPage } from './pages/ElectronicDispatchPage';
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     element: <AppShell />,
     children: [
       { index: true, element: <DashboardPage /> },
+      { path: 'auth', element: <AuthPage /> },
       { path: 'customers', element: <CustomersPage /> },
       { path: 'electronic-documents', element: <ElectronicDocumentsPage /> },
       { path: 'payments', element: <PaymentsPage /> },

@@ -35,6 +35,17 @@ final class ElectronicDispatchRepository
         return null;
     }
 
+    public function findById(string $dispatchId): ?array
+    {
+        foreach ($this->all(500) as $record) {
+            if (($record['id'] ?? null) === $dispatchId) {
+                return $record;
+            }
+        }
+
+        return null;
+    }
+
     public function append(array $record): array
     {
         $dir = dirname($this->storagePath);

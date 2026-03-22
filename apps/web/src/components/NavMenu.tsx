@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 const links = [
   { to: '/', label: 'Dashboard' },
+  { to: '/auth', label: 'Auth' },
   { to: '/customers', label: 'Clientes' },
   { to: '/electronic-documents', label: 'FE' },
   { to: '/payments', label: 'Cobros' },
