@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { AppShell } from './components/AppShell';
 import { CustomersPage } from './pages/CustomersPage';
 import { DashboardPage } from './pages/DashboardPage';
+import { ElectronicDispatchPage } from './pages/ElectronicDispatchPage';
 import { ElectronicDocumentsPage } from './pages/ElectronicDocumentsPage';
 import { InvoicesPage } from './pages/InvoicesPage';
 import { PaymentsPage } from './pages/PaymentsPage';
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: 'electronic-documents', element: <ElectronicDocumentsPage /> },
       { path: 'payments', element: <PaymentsPage /> },
       { path: 'invoices', element: <InvoicesPage /> },
+      { path: 'electronic-dispatch', element: <ElectronicDispatchPage /> },
     ],
   },
 ]);

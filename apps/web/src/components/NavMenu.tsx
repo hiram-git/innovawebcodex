@@ -6,6 +6,7 @@ const links = [
   { to: '/electronic-documents', label: 'FE' },
   { to: '/payments', label: 'Cobros' },
   { to: '/invoices', label: 'Facturas' },
+  { to: '/electronic-dispatch', label: 'Dispatch FE' },
 ];
 
 export function NavMenu() {

@@ -2,13 +2,13 @@
 
 namespace App\Repositories;
 
-final class InvoiceDraftRepository
+final class ElectronicDispatchRepository
 {
     private string $storagePath;
 
     public function __construct(?string $storagePath = null)
     {
-        $this->storagePath = $storagePath ?? __DIR__ . '/../../storage/invoices.ndjson';
+        $this->storagePath = $storagePath ?? __DIR__ . '/../../storage/electronic_dispatch.ndjson';
     }
 
     public function all(int $limit = 20): array
@@ -28,17 +28,6 @@ final class InvoiceDraftRepository
     {
         foreach ($this->all(200) as $record) {
             if (($record['idempotencyKey'] ?? null) === $idempotencyKey) {
-                return $record;
-            }
-        }
-
-        return null;
-    }
-
-    public function findById(string $invoiceId): ?array
-    {
-        foreach ($this->all(500) as $record) {
-            if (($record['id'] ?? null) === $invoiceId) {
                 return $record;
             }
         }

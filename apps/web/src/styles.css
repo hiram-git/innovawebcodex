@@ -137,3 +137,11 @@ body {
   background: #ea580c;
   cursor: pointer;
 }
+
+.payment-form select {
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e2e8f0;
+}

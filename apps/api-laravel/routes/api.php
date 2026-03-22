@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\HealthController;
 use App\Http\Controllers\Api\MetaController;
 use App\Http\Controllers\Api\V1\CustomerController;
+use App\Http\Controllers\Api\V1\ElectronicDispatchController;
 use App\Http\Controllers\Api\V1\ElectronicDocumentController;
 use App\Http\Controllers\Api\V1\InvoiceController;
 use App\Http\Controllers\Api\V1\PaymentController;
@@ -19,4 +20,6 @@ return [
     ['POST', '/api/v1/payments', [PaymentController::class, 'store']],
     ['GET', '/api/v1/invoices', [InvoiceController::class, 'index']],
     ['POST', '/api/v1/invoices', [InvoiceController::class, 'store']],
+    ['GET', '/api/v1/electronic-dispatch', [ElectronicDispatchController::class, 'index']],
+    ['POST', '/api/v1/electronic-dispatch', [ElectronicDispatchController::class, 'store']],
 ];
