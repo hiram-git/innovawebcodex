@@ -1,0 +1,38 @@
+services:
+  legacy-php:
+    image: php:8.3-apache
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8081:80"
+
+  api-laravel:
+    image: php:8.3-cli
+    working_dir: /app
+    command: php -S 0.0.0.0:8000 -t public
+    volumes:
+      - ./apps/api-laravel:/app
+    environment:
+      DB_CONNECTION: sqlsrv
+      DB_HOST: host.docker.internal
+      DB_PORT: 1433
+      DB_DATABASE: PRUEBAS_AYLEEN
+      DB_USERNAME: sirrohan01
+      DB_PASSWORD: secret
+    ports:
+      - "8080:8000"
+
+  web:
+    image: node:22-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    volumes:
+      - ./apps/web:/app
+    ports:
+      - "5173:5173"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
