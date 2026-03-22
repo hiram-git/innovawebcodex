@@ -2,15 +2,15 @@
 
 ## Qué sigue inmediatamente
 
-1. **Cerrar Sprint 10**
-   - conectar adapters FE con credenciales/configuración reales por ambiente
-   - mapear request/response finales con PAC y contingencias
-   - consolidar correlación fiscal por control/cufe/providerReference
+1. **Cerrar Sprint 8**
+   - conectar drafts de factura con SQL Server real
+   - mapear impuestos, descuentos y totales del modelo legacy
+   - preparar transición hacia emisión FE desde la nueva API
 
-2. **Entrar a Sprint 11**
-   - preparar auth foundation para backoffice y APIs internas
-   - definir tenants, sesiones y permisos operativos mínimos
-   - habilitar observabilidad y métricas por módulo
+2. **Entrar a Sprint 9**
+   - encapsular The Factory HKA en el nuevo backend
+   - preparar reenvíos y trazabilidad FE
+   - fortalecer auditoría técnica y funcional
 
 3. **Preparar piloto técnico**
    - levantar SQL Server accesible desde el nuevo backend
@@ -21,6 +21,6 @@
 
 Sí, **parcialmente**:
 
-- Sí puedo seguir avanzando en adapters, contratos y frontend scaffold.
-- No puedo completar Laravel/Vite reales ni integración FE productiva sin registries, drivers y credenciales PAC reales.
-- En cuanto exista acceso a paquetes o drivers preinstalados, puedo seguir con Sprint 11 y siguientes sobre runtime real.
+- Sí puedo seguir avanzando en endpoints base, frontend y contratos de módulos.
+- No puedo completar Laravel/Vite reales ni integración transaccional FE/SQL Server sin registries y sin `pdo_sqlsrv`.
+- En cuanto exista acceso a paquetes o drivers preinstalados, puedo seguir con Sprint 9 y siguientes sobre runtime real.
