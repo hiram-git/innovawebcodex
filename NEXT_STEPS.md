@@ -1,5 +1,10 @@
 # Siguientes pasos recomendados
 
+## Resolución y continuidad
+
+- **Resolución operativa:** seguir con el **Sprint 21** (sincronización diferida).
+- **Estado del programa:** ya casi terminamos la fase offline; enfocar cierre en cola local, reintentos y conflictos controlados.
+
 ## Qué sigue inmediatamente
 
 1. **Cerrar Sprint 20**
