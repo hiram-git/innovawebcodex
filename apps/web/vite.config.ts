@@ -7,20 +7,34 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      includeAssets: ['pwa-icon.svg', 'maskable-icon.svg'],
       manifest: {
-        name: 'Innova Web',
+        name: 'Innova Web Backoffice',
         short_name: 'Innova',
+        description: 'Backoffice moderno API-first para operaciones, FE y cobranza.',
         theme_color: '#f97316',
         background_color: '#0f172a',
         display: 'standalone',
+        orientation: 'portrait',
         start_url: '/',
+        scope: '/',
         icons: [
           {
-            src: '/pwa-192.png',
-            sizes: '192x192',
-            type: 'image/png',
+            src: '/pwa-icon.svg',
+            sizes: 'any',
+            type: 'image/svg+xml',
+            purpose: 'any',
+          },
+          {
+            src: '/maskable-icon.svg',
+            sizes: 'any',
+            type: 'image/svg+xml',
+            purpose: 'maskable',
           },
         ],
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
       },
     }),
   ],

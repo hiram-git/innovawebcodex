@@ -256,3 +256,18 @@ body {
   margin-top: 0.75rem;
   color: #cbd5e1;
 }
+
+
+.pwa-card {
+  margin-bottom: 1.5rem;
+}
+
+.pwa-card button {
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: #22c55e;
+  color: #052e16;
+  cursor: pointer;
+  font-weight: 600;
+}

@@ -2,15 +2,15 @@
 
 ## Qué sigue inmediatamente
 
-1. **Cerrar Sprint 14**
-   - conectar detalle FE con descargas reales de PDF/XML/QR
-   - consolidar filtros, estados y feedback operativo del módulo fiscal
-   - preparar trazabilidad visual homogénea para incidentes FE
+1. **Cerrar Sprint 19**
+   - validar instalación PWA en navegadores objetivo y dispositivos operativos
+   - consolidar assets, manifest y comportamiento base del service worker
+   - alinear experiencia de instalación con el backoffice y branding operativo
 
-2. **Entrar a Sprint 15**
-   - profundizar flujo frontend de cobros con formularios y métodos de pago
-   - unificar componentes reutilizables de tablas, filtros y formularios
-   - alinear navegación operativa con el circuito de caja/cobranza
+2. **Entrar a Sprint 20**
+   - definir caché segura para assets, catálogos y lecturas permitidas
+   - preparar pantallas offline y mensajes de degradación controlada
+   - documentar límites offline para módulos fiscales y de cobranza
 
 3. **Preparar piloto técnico**
    - levantar SQL Server accesible desde el nuevo backend
@@ -21,6 +21,6 @@
 
 Sí, **parcialmente**:
 
-- Sí puedo seguir avanzando en shell frontend, módulos UI y contratos.
-- No puedo completar descargas productivas ni integración FE/SQL Server real sin drivers, secretos y runtime completo.
-- En cuanto exista acceso a paquetes o drivers preinstalados, puedo seguir con Sprint 15 y siguientes sobre runtime real.
+- Sí puedo seguir avanzando en PWA base, shell frontend y contratos.
+- No puedo completar validación PWA productiva ni integración FE/SQL Server real sin runtime completo, assets finales y drivers.
+- En cuanto exista acceso a paquetes o drivers preinstalados, puedo seguir con Sprint 20 y siguientes sobre runtime real.

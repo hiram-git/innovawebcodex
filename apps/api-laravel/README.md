@@ -4,8 +4,8 @@
 
 1. Instalar dependencias reales de Laravel 11 con `composer install`.
 2. Sustituir este bootstrap mínimo por el runtime oficial de Laravel.
-3. Cerrar Sprint 14 (`electronic documents UI`).
-4. Avanzar Sprint 15 (`payments UI`).
+3. Cerrar Sprint 19 (`pwa base`).
+4. Avanzar Sprint 20 (`offline cache`).
 
 ## Endpoints disponibles en este scaffold
 

@@ -8,7 +8,7 @@ final class MetaController
     {
         return [
             'program' => 'innova-modernization',
-            'currentSprint' => 'Sprint 14',
+            'currentSprint' => 'Sprint 19',
             'status' => 'in_progress',
             'completed' => [
                 'migration-report',
@@ -20,6 +20,7 @@ final class MetaController
                 'frontend-shell-auth-guards',
                 'customers-ui-scaffold',
                 'electronic-documents-ui-scaffold',
+                'pwa-base-scaffold',
             ],
             'next' => [
                 'frontend-api-integration',
@@ -28,8 +29,8 @@ final class MetaController
                 'invoices-api',
                 'provider-adapters-hardening',
                 'api-observability',
-                'customer-edit-persistence',
                 'document-download-runtime',
+                'offline-cache-strategy',
             ],
         ];
     }

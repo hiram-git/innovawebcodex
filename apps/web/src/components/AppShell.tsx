@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { NavMenu } from './NavMenu';
 import { useAuthStore } from '../store/auth';
 import { apiPost } from '../api/client';
+import { PwaStatusCard } from './PwaStatusCard';
 
 export function AppShell() {
   const navigate = useNavigate();
@@ -46,6 +47,7 @@ export function AppShell() {
             <span>Sin sesión activa</span>
           )}
         </div>
+        <PwaStatusCard />
         <NavMenu />
       </aside>
       <main className="content">
