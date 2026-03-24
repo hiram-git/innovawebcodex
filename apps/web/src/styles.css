@@ -284,3 +284,37 @@ body {
 .roadmap-panel {
   margin-top: 1rem;
 }
+
+
+.sync-card {
+  margin-bottom: 1.5rem;
+}
+
+.sync-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sync-actions button {
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.sync-actions button:first-child {
+  background: #38bdf8;
+  color: #082f49;
+}
+
+.sync-actions button:last-child {
+  background: #94a3b8;
+  color: #0f172a;
+}
+
+.sync-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

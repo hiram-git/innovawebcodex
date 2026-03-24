@@ -15,7 +15,7 @@ import './styles.css';
 
 registerSW({
   immediate: true,
-  onRegisteredSW(swUrl) {
+  onRegisteredSW(swUrl: string) {
     console.info('Service worker registrado', swUrl);
   },
   onOfflineReady() {

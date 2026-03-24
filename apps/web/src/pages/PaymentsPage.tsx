@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { apiGet } from '../api/client';
+import { useSyncQueueStore } from '../store/syncQueue';
 
 type PaymentRecord = {
   id: string;
@@ -19,6 +20,7 @@ type PaymentsResponse = {
 export function PaymentsPage() {
   const [payments, setPayments] = useState<PaymentRecord[]>([]);
   const [status, setStatus] = useState('Cargando pagos...');
+  const enqueue = useSyncQueueStore((state) => state.enqueue);
 
   const loadPayments = () => {
     apiGet<PaymentsResponse>('/api/v1/payments?limit=10')
@@ -65,7 +67,13 @@ export function PaymentsPage() {
       setStatus('Pago draft registrado.');
       loadPayments();
     } catch (error: unknown) {
-      setStatus(error instanceof Error ? error.message : 'No fue posible registrar el pago.');
+      enqueue({
+        entity: 'payment',
+        endpoint: 'http://127.0.0.1:18080/api/v1/payments',
+        method: 'POST',
+        payload: payload as Record<string, unknown>,
+      });
+      setStatus(error instanceof Error ? `${error.message}. Pago enviado a cola local.` : 'No fue posible registrar el pago. Se envió a cola local.');
     }
   };
 

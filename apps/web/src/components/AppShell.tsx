@@ -4,6 +4,7 @@ import { NavMenu } from './NavMenu';
 import { useAuthStore } from '../store/auth';
 import { apiPost } from '../api/client';
 import { PwaStatusCard } from './PwaStatusCard';
+import { SyncQueueCard } from './SyncQueueCard';
 
 export function AppShell() {
   const navigate = useNavigate();
@@ -48,6 +49,7 @@ export function AppShell() {
           )}
         </div>
         <PwaStatusCard />
+        <SyncQueueCard />
         <NavMenu />
       </aside>
       <main className="content">

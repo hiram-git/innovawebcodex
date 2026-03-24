@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { apiGet } from '../api/client';
+import { useSyncQueueStore } from '../store/syncQueue';
 
 type InvoiceRecord = {
   id: string;
@@ -19,6 +20,7 @@ type InvoicesResponse = {
 export function InvoicesPage() {
   const [invoices, setInvoices] = useState<InvoiceRecord[]>([]);
   const [status, setStatus] = useState('Cargando drafts de factura...');
+  const enqueue = useSyncQueueStore((state) => state.enqueue);
 
   const loadInvoices = () => {
     apiGet<InvoicesResponse>('/api/v1/invoices?limit=10')
@@ -70,7 +72,13 @@ export function InvoicesPage() {
       setStatus('Draft de factura registrado.');
       loadInvoices();
     } catch (error: unknown) {
-      setStatus(error instanceof Error ? error.message : 'No fue posible registrar la factura.');
+      enqueue({
+        entity: 'invoice',
+        endpoint: 'http://127.0.0.1:18080/api/v1/invoices',
+        method: 'POST',
+        payload: payload as Record<string, unknown>,
+      });
+      setStatus(error instanceof Error ? `${error.message}. Factura enviada a cola local.` : 'No fue posible registrar la factura. Se envió a cola local.');
     }
   };
 

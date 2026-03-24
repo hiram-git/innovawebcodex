@@ -4,8 +4,8 @@
 
 1. Instalar dependencias reales de Laravel 11 con `composer install`.
 2. Sustituir este bootstrap mínimo por el runtime oficial de Laravel.
-3. Cerrar Sprint 20 (`offline cache`).
-4. Avanzar Sprint 21 (`sync diferido`).
+3. Cerrar Sprint 21 (`sync diferido`).
+4. Avanzar Sprint 22 (`offline compliance hardening`).
 
 ## Endpoints disponibles en este scaffold
 
