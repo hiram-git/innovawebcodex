@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { registerSW } from 'virtual:pwa-register';
 import { AppShell } from './components/AppShell';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { AuthPage } from './pages/AuthPage';
@@ -11,6 +12,16 @@ import { ElectronicDocumentsPage } from './pages/ElectronicDocumentsPage';
 import { InvoicesPage } from './pages/InvoicesPage';
 import { PaymentsPage } from './pages/PaymentsPage';
 import './styles.css';
+
+registerSW({
+  immediate: true,
+  onRegisteredSW(swUrl) {
+    console.info('Service worker registrado', swUrl);
+  },
+  onOfflineReady() {
+    console.info('Shell offline listo para uso controlado.');
+  },
+});
 
 const router = createBrowserRouter([
   {

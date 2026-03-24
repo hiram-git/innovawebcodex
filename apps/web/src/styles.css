@@ -271,3 +271,16 @@ body {
   cursor: pointer;
   font-weight: 600;
 }
+
+
+.dashboard-grid {
+  align-items: start;
+}
+
+.offline-panel {
+  border-color: rgba(56, 189, 248, 0.28);
+}
+
+.roadmap-panel {
+  margin-top: 1rem;
+}

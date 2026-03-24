@@ -2,15 +2,15 @@
 
 ## Qué sigue inmediatamente
 
-1. **Cerrar Sprint 19**
-   - validar instalación PWA en navegadores objetivo y dispositivos operativos
-   - consolidar assets, manifest y comportamiento base del service worker
-   - alinear experiencia de instalación con el backoffice y branding operativo
+1. **Cerrar Sprint 20**
+   - validar expiración y refresh de caché para assets y lecturas permitidas
+   - probar fallback offline del shell y navegación degradada
+   - documentar límites operativos offline para módulos fiscales, cobros y facturas
 
-2. **Entrar a Sprint 20**
-   - definir caché segura para assets, catálogos y lecturas permitidas
-   - preparar pantallas offline y mensajes de degradación controlada
-   - documentar límites offline para módulos fiscales y de cobranza
+2. **Entrar a Sprint 21**
+   - diseñar cola local para operaciones permitidas
+   - definir reintentos y resolución de conflictos básica
+   - preparar telemetría de sincronización diferida
 
 3. **Preparar piloto técnico**
    - levantar SQL Server accesible desde el nuevo backend
@@ -21,6 +21,6 @@
 
 Sí, **parcialmente**:
 
-- Sí puedo seguir avanzando en PWA base, shell frontend y contratos.
-- No puedo completar validación PWA productiva ni integración FE/SQL Server real sin runtime completo, assets finales y drivers.
-- En cuanto exista acceso a paquetes o drivers preinstalados, puedo seguir con Sprint 20 y siguientes sobre runtime real.
+- Sí puedo seguir avanzando en caché offline controlado, shell frontend y contratos.
+- No puedo completar validación offline productiva ni integración FE/SQL Server real sin runtime completo, assets finales y drivers.
+- En cuanto exista acceso a paquetes o drivers preinstalados, puedo seguir con Sprint 21 y siguientes sobre runtime real.
